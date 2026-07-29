@@ -1,0 +1,5 @@
+package com.sreesanth.parkinglot.service;
+
+public class ParkingService {
+
+}
