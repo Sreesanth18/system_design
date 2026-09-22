@@ -9,5 +9,4 @@ public class ShowSeat {
         this.seat = seat;
         this.status = SeatStatus.AVAILABLE;
     }
-
 }

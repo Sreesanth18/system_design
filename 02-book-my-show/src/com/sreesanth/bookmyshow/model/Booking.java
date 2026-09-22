@@ -7,13 +7,18 @@ public class Booking {
 
     private final String bookingId;
     private final Show show;
-    private final List<Seat> seats;
+    private final List<ShowSeat> seats;
+
     private BookingStatus status;
 
-    public Booking(String bookingId, Show show) {
+    public Booking(
+            String bookingId,
+            Show show,
+            List<ShowSeat> seats) {
+
         this.bookingId = bookingId;
         this.show = show;
-        this.seats = new ArrayList<>();
+        this.seats = new ArrayList<>(seats);
         this.status = BookingStatus.CREATED;
     }
 
@@ -25,16 +30,12 @@ public class Booking {
         return show;
     }
 
-    public List<Seat> getSeats() {
-        return seats;
+    public List<ShowSeat> getSeats() {
+        return new ArrayList<>(seats);
     }
 
     public BookingStatus getStatus() {
         return status;
-    }
-
-    public void addSeat(Seat seat) {
-        seats.add(seat);
     }
 
     public void setStatus(BookingStatus status) {
